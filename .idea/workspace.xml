@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="zadanie:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68ddc009-c0d4-4af9-b9b7-29ab106b868f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OHIoHdUo7OWdUbflsc83kpQ8GR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Desktop/My Project/fes_gymfit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "294940e9201fa55762194ac8cf0c2c23",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\OneDrive\Desktop\Komponentne programovanie\zadanie\src\main\java\sk\tuke" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\OneDrive\Desktop\gamestudio-6619-masterrrr\src\main\resources\static\css\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SpringClient">
+    <configuration name="SpringClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sk.tuke.gamestudio.SpringClient" />
+      <module name="zadanie" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.tuke.gamestudio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="gamestudio-6619-masterrrr" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="gamestudio-6619-masterrrr" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringClient" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="zadanie" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sk.tuke.gamestudio.SpringClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sk.tuke.gamestudio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SpringClient" />
+      <item itemvalue="Spring Boot.SpringClient" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpringClient" />
+        <item itemvalue="Spring Boot.SpringClient" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68ddc009-c0d4-4af9-b9b7-29ab106b868f" name="Changes" comment="" />
+      <created>1681211257531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681211257531</updated>
+      <workItem from="1681211258977" duration="1137000" />
+      <workItem from="1681218468905" duration="5000000" />
+      <workItem from="1681279572447" duration="36000" />
+      <workItem from="1681313361688" duration="25403000" />
+      <workItem from="1694865014126" duration="1072000" />
+      <workItem from="1700919057148" duration="3240000" />
+      <workItem from="1700922333608" duration="25000" />
+      <workItem from="1700925488030" duration="169000" />
+      <workItem from="1700926644827" duration="9000" />
+      <workItem from="1700931068497" duration="5494000" />
+      <workItem from="1701611633491" duration="2420000" />
+      <workItem from="1702161303019" duration="43000" />
+      <workItem from="1708435700743" duration="543000" />
+      <workItem from="1708526275545" duration="12000" />
+      <workItem from="1708530430695" duration="2025000" />
+      <workItem from="1708625275682" duration="36000" />
+      <workItem from="1712258718533" duration="196000" />
+      <workItem from="1713361286046" duration="117000" />
+      <workItem from="1715000036379" duration="229000" />
+      <workItem from="1715002141699" duration="559000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

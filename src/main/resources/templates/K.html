@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Webpage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/1024.css" />
+</head>
+<body>
+
+<!--Rating-->
+<div id = "rating-cont" class="container-rating">
+    <h3>Send Rating:</h3>
+    <form action="/K/rating" method="post">
+        <div class="rating">
+            <label for="star5" title="text">
+                <input type="submit" id="star5" name="rating" value="5" />
+            </label>
+            <label for="star4" title="text">
+                <input type="submit" id="star4" name="rating" value="4" />
+            </label>
+            <label for="star3" title="text">
+                <input type="submit" id="star3" name="rating" value="3" />
+            </label>
+            <label for="star2" title="text">
+                <input type="submit" id="star2" name="rating" value="2" />
+            </label>
+            <label for="star1" title="text">
+                <input type="submit" id="star1" name="rating" value="1" />
+            </label>
+        </div>
+    </form>
+</div>
+<!--Comment-->
+<!--///-->
+<div id = "comment-cont"class="login-box">
+    <h2>Leave a comment:</h2>
+    <form action="/K/comment" method="post">
+        <div class="user-box">
+            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+            <label>Comment:</label>
+        </div>
+        <button type="submit" class="glow-on-hover">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </button>
+    </form>
+</div>
+
+<!--///-->
+<!--<div class="container">-->
+<!--    <form action="/K/comment" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <h5>Send Comment:</h5>-->
+<!--            <label for="comment"></label>-->
+<!--            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--    </form>-->
+<!--</div>-->
+<!--///-->
+
+
+
+<!--<div class="container-rating">-->
+<!--    <h2>Leave a Rating:</h2>-->
+<!--    <form action="/K/rating" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <label for="rating">Rating:</label>-->
+<!--            <textarea class="form-control" id="rating" name="rating" rows="3" required></textarea>-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--    </form>-->
+<!--</div>-->
+
+<div id = "AllComment">
+    <h6>AllComment: </h6>
+    <p><span id="comm"></span></p>
+    <script>
+        $.ajax({
+            url: "/K/top-comment",
+            type: "GET",
+            dataType: "json",
+            success: function(players){
+                // Відобразити список гравців на сторінці HTML
+                var topPlayerDiv = $("#AllComment");
+                var playerList = "<ul>";
+                var j = 1;
+                for(var i=0; i<players.length; i++){
+                    playerList +="<p>"+ j + "." + players[i].player + ": " + players[i].comment + "</p>" ;
+                    j++;
+                }
+                playerList += "</ul>";
+                topPlayerDiv.find("#comm").html(playerList);
+            },
+            error: function(){
+                alert("Помилка отримання списку найкращих гравців з сервера.");
+            }
+        });
+    </script>
+</div>
+
+<div id = "TopPlayer">
+    <h6>TopPlayer: </h6>
+    <p><span id="player"></span></p>
+    <script>
+        $.ajax({
+            url: "/K/top-score",
+            type: "GET",
+            dataType: "json",
+            success: function(players){
+                // Відобразити список гравців на сторінці HTML
+                var topPlayerDiv = $("#TopPlayer");
+                var playerList = "<ul>";
+                var j = 1;
+                for(var i=0; i<players.length; i++){
+                    playerList +="<p>"+ j + "." + players[i].player + ": " + players[i].points + "</p>" ;
+                    j++;
+                }
+                playerList += "</ul>";
+                topPlayerDiv.find("#player").html(playerList);
+            },
+            error: function(){
+                alert("Помилка отримання списку найкращих гравців з сервера.");
+            }
+        });
+    </script>
+</div>
+
+
+    <p><span id="rat"></span></p>
+    <script>
+        $.ajax({
+            url: "/K/middle-rating",
+            type: "GET",
+            dataType: "json",
+            success: function(players){
+                // Обчислити середнє значення очок
+                var totalPoints = 0;
+                var numPlayers = players.length;
+                for(var i=0; i<numPlayers; i++){
+                    totalPoints += players[i].rating;
+                }
+                var avgPoints = totalPoints / numPlayers;
+
+                // Відобразити результат на сторінці HTML
+                var topPlayerDiv = $("#MiddleRating");
+                avgPoints.toFixed(2)
+                topPlayerDiv.append("<p>AverageRating: " + avgPoints.toFixed(2) + "</p>");
+            },
+            error: function(){
+                alert("Помилка отримання списку гравців з сервера.");
+            }
+        });
+    </script>
+
+
+<h1>Game1024</h1>
+<hr>
+<div id="score">
+    <h2>Score: <span id="score-count">0</span></h2>
+</div>
+
+<div id="gameWon">
+    <p th:utext="${message}"></p>
+</div>
+
+<div id="gameLose">
+    <p th:utext="${message}"></p>
+</div>
+
+<div id = "MiddleRating"></div>
+<div>
+    <div id="board">
+        <span th:utext="${@keyController.getGame()}"></span>
+    </div>
+</div>
+<button id="newGameButton" onclick="startNewGame()">New Game</button>
+
+<script>
+
+    function startNewGame() {
+        window.location.href = "/new";
+    }
+    function updateStepCount() {
+        $.ajax({
+            url: "/K/score",
+            type: "GET",
+            success: function(data) {
+                $("#score-count").text(data);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        $(document).keydown(function(e) {
+            if (e.which == 39) { // right arrow key
+                $.ajax({
+                    type: 'POST',
+                    url: '/K/move-right',
+                    success: function(data) {
+                        $('#board').html(data);
+                        updateStepCount();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            } else if (e.which == 37) { // left arrow key
+                $.ajax({
+                    type: 'POST',
+                    url: '/K/move-left',
+                    success: function(data) {
+                        $('#board').html(data);
+                        updateStepCount();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            } else if (e.which == 38) { // up arrow key
+                $.ajax({
+                    type: 'POST',
+                    url: '/K/move-up',
+                    success: function(data) {
+                        $('#board').html(data);
+                        updateStepCount();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            } else if (e.which == 40) { // down arrow key
+                $.ajax({
+                    type: 'POST',
+                    url: '/K/move-down',
+                    success: function(data) {
+                        $('#board').html(data);
+                        updateStepCount();
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    });
+
+    ratingContainer = document.getElementById("rating-cont");
+    commentContainer = document.getElementById("comment-cont");
+    allcommentContainer = document.getElementById("AllComment");
+    middleaverageContainer = document.getElementById("MiddleRating");
+    function guessBejeweled()
+    {
+        fetch('/K/guessPlayer')
+            .then(response => response.text())
+            .then(data => {
+                if(data === "guess")
+                {
+                    ratingContainer.style.display = 'none';
+                    commentContainer.style.display = 'none';
+                    allcommentContainer.style.display = 'block';
+                    middleaverageContainer.style.display = 'block';
+                }
+                else
+                {
+                    ratingContainer.style.display = 'block';
+                    commentContainer.style.display = 'block';
+                    allcommentContainer.style.display = 'none';
+                    middleaverageContainer.style.display = 'none';
+                }
+            });
+    }
+    guessBejeweled();
+</script>
+
+
+</body>
+</html>
